@@ -6,42 +6,41 @@ as it is free. Each tea drinker is represented by a runnable class that looks li
 
 import java.util.concurrent.*;
 public class TeaParty {
-	class TeaDrinker implements Runnable {
-		private int myID;
-		private int mySleepTimeNS;
-		public TeaDrinker(int id, int sleep) {
-			myID = id;
-			mySleepTimeNS = sleep;
-		}
-		private void sleep(int t) {
-			try {
-			Thread.sleep(t);
-			} catch (InterruptedException ie) {
-			System.out.println("Sleep interrupted; should not happen");
-			}
-		}
-		public void run() {
-			System.out.println("Tea drinker " + myID +
-			" starting after sleep of " + mySleepTimeNS + "ns");
-			sleep(mySleepTimeNS);
-			while (true) { // run for ever
-				sleep(mySleepTimeNS);
-				System.out.println("Tea drinker " + myID + " getting cup, saucer, and spoon");
-				// add code to get the cup, saucer, and spoon here
-				System.out.println("Tea drinker " + myID +
-				" drinking tea for " + mySleepTimeNS + "ns");
-				sleep(mySleepTimeNS);
-				System.out.println("Tea drinker " + myID +
-				" finished drinking tea, releasing cup, saucer, and spoon");
-				// add code to release the cup, saucer, and spoon here
-				System.out.println("Tea drinker " + myID +
-				" will talk for " + mySleepTimeNS + "ns");
-				sleep(mySleepTimeNS);
-			}
-		}
-	}
-	public static void main(String [] args) {
-	}
+ class TeaDrinker implements Runnable {
+  private int myID;
+  private int mySleepTimeNS;
+  public TeaDrinker(int id, int sleep) {
+   myID = id;
+   mySleepTimeNS = sleep;
+  }
+  private void sleep(int t) {
+   try {
+    Thread.sleep(t);
+   } catch (InterruptedException ie) {
+    System.out.println("Sleep interrupted; should not happen");
+   }
+  }
+  public void run() {
+   System.out.println("Tea drinker " + myID +
+    " starting after sleep of " + mySleepTimeNS + "ns");
+   sleep(mySleepTimeNS);
+   while (true) { // run for ever
+    sleep(mySleepTimeNS);
+    System.out.println("Tea drinker " + myID + " getting cup, saucer, and spoon");
+    // add code to get the cup, saucer, and spoon here
+    System.out.println("Tea drinker " + myID +
+     " drinking tea for " + mySleepTimeNS + "ns");
+    sleep(mySleepTimeNS);
+    System.out.println("Tea drinker " + myID +
+     " finished drinking tea, releasing cup, saucer, and spoon");
+    // add code to release the cup, saucer, and spoon here
+    System.out.println("Tea drinker " + myID +
+     " will talk for " + mySleepTimeNS + "ns");
+    sleep(mySleepTimeNS);
+   }
+  }
+ }
+ public static void main(String[] args) {}
 }
 
 
